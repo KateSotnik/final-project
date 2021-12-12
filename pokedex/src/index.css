@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.pokeCardImg {
+  width: 100px;
+  height: auto;
+}
+
+.pokeCard{
+  margin: 20px;
+  width: 18rem;
+}
+.pokeCardButton {
+  margin-bottom: 20px;
+  
+}
+.mainPageHeader {
+font-weight: 500;
+color: darkcyan;
+margin-left: 20px;
+margin-top: 20px;
+}
+
+.navBarLogo {
+font-weight: 500;
+color: darkcyan;
+margin-right: 10px;
+}
+.navBarLink {
+  margin-left: 10px;
+ 
+  text-decoration-line: underline;
+}
