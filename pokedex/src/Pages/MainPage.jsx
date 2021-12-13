@@ -1,13 +1,13 @@
-import React from "react";
-import { Container, Row } from "react-bootstrap";
-import PokeList from "./../components/PokeList";
+import React from 'react';
+import { Container} from 'react-bootstrap';
+import PokeList from './../components/PokeList';
 
 const MainPage = (props) => {
   return (
     <Container fluid>
-      <div className= 'mainPageContainer'>
+      <div className="mainPageContainer">
         <PokeList pokemonsToDisplay={props.pokemonsToDisplay} />
-        </div>
+      </div>
     </Container>
   );
 };

@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Container, Row } from "react-bootstrap";
-import PokeDetails from "../components/PokeDetails";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { PokemonContext } from "../App";
-import { POKE_DETAILS_STATUS_TRUE } from "../constants";
-import { POKE_DETAILS_STATUS_FALSE } from "./../constants";
-import { Api } from "./../pokemonApi";
+import React, { useEffect, useState, useContext } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import PokeDetails from '../components/PokeDetails';
+import { useParams } from 'react-router-dom';
+import { PokemonContext } from '../App';
+import { POKE_DETAILS_STATUS_TRUE } from '../constants';
+import { POKE_DETAILS_STATUS_FALSE } from './../constants';
+import { Api } from './../pokemonApi';
 
 const DetailsPokemonPage = () => {
   let { id } = useParams();
@@ -25,16 +24,15 @@ const DetailsPokemonPage = () => {
     const getPokemons = async () => {
       const caughtPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}`;
       const response = await Api.getPokemons(caughtPokemonUrl);
-      console.log(response);
       let obj = {
         name: response.name,
         weight: response.weight,
         id: response.id,
         abilities: response.abilities.map((element) => {
-          return [" " + element.ability.name];
+          return [' ' + element.ability.name];
         }),
         types: response.types.map((element) => {
-          return [" " + element.type.name];
+          return [' ' + element.type.name];
         }),
         status: captureStatus,
         dateOfCatch: dateOfCatch,

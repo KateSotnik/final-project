@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { Card, Button } from "react-bootstrap";
-import { PokemonContext } from "./../App";
-import { Link } from "react-router-dom";
-import { POKE_CARD_NAME, POKE_CARD_ID, POKE_CARD_BUTTON_TEXT } from "./../constants";
+import React, { useContext } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import { PokemonContext } from './../App';
+import { Link } from 'react-router-dom';
+import { POKE_CARD_NAME, POKE_CARD_ID, POKE_CARD_BUTTON_TEXT } from './../constants';
 
 const PokeCard = (props) => {
   const { pokemonsArray, setPokemonsArray, setCaughtPokemonsArray } =
@@ -31,10 +31,10 @@ const PokeCard = (props) => {
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.pokemon.id}.png`}
         />
         <Card.Body>
-          <Card.Title className="text-decoration-none">
+          <Card.Title className="pokeCardText">
             {POKE_CARD_NAME} {props.pokemon.name}
           </Card.Title>
-          <Card.Text className="text-decoration-none">
+          <Card.Text className="pokeCardText">
             {POKE_CARD_ID} {props.pokemon.id}
           </Card.Text>
         </Card.Body>
