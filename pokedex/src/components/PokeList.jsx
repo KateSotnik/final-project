@@ -1,7 +1,6 @@
-import axios from "axios";
 import PokeCard from "./PokeCard";
 import { Container, Row, Col } from "react-bootstrap";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import LoadButton from "./LoadButton";
 import { useLocation } from "react-router-dom";
 

@@ -11,33 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.pokeCardText {
+  text-decoration: none;
+}
+
 .pokeCardImg {
   width: 100px;
   height: auto;
 }
 
 .pokeCard{
-  margin: 20px;
+  margin-top: 40px;
   width: 18rem;
 }
+
 .pokeCardButton {
   margin-bottom: 20px;
   
 }
-.mainPageHeader {
-font-weight: 500;
-color: darkcyan;
-margin-left: 20px;
-margin-top: 20px;
-}
 
-.navBarLogo {
-font-weight: 500;
-color: darkcyan;
-margin-right: 10px;
+.detailsCardBody {
+  margin-top: 80px;
 }
-.navBarLink {
-  margin-left: 10px;
- 
-  text-decoration-line: underline;
+.navbarName {
+ margin-left: 20px;
+}
+.mainPageContainer {
+  margin-top: 80px;
 }

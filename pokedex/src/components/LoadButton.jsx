@@ -1,20 +1,19 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
-import { PokemonContext } from './../App';
+import { PokemonContext } from "./../App";
+import { BUTTON_LOAD_MORE_TEXT } from "./../constants";
 
 const LoadButton = (props) => {
-  const { getPokemons, nextPage } = useContext(PokemonContext);
+  const { getPokemons } = useContext(PokemonContext);
   return (
     <Button
       onClick={() => {
-        getPokemons(nextPage);
+        getPokemons();
       }}
       variant="primary"
-      // disabled={'isNextPage'}
       size="lg"
     >
-      Load more...
+      {BUTTON_LOAD_MORE_TEXT}{" "}
     </Button>
   );
 };
