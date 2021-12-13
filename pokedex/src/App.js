@@ -4,17 +4,18 @@ import MainPage from "./Pages/MainPage";
 import InfoPokemonPage from "./Pages/InfoPokemonPage";
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import NavBar from './components/Navbar';
 
 export const PokemonContext = createContext();
 
 function App() {
   const [pokemonsArray, setPokemonsArray] = useState([]);
   const [caughtPokemonsArray, setCaughtPokemonsArray] = useState([]);
-  const [nextPage, setNextPage] = useState("");
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=20";
+  const [nextPage, setNextPage] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
 
-  const getPokemons = (url) => {
-    axios.get(url).then((response) => {
+
+  const getPokemons = () => {
+    axios.get(nextPage).then((response) => {
       setNextPage(response.data.next);
 
       let pokemons = [];
@@ -35,7 +36,7 @@ function App() {
   };
 
   useEffect(() => {
-    getPokemons(url);
+    getPokemons(nextPage);
   }, []);
 
   const providerValue = {
@@ -51,6 +52,7 @@ function App() {
     <BrowserRouter>
       <PokemonContext.Provider value={providerValue}>
         <div className="App">
+        <NavBar />
           <Routes>
             <Route
               path="/"
