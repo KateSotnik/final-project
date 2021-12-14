@@ -35,7 +35,7 @@ const DetailsPokemonPage = () => {
       setLoading(true);
       const caughtPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}`;
       const response = await Api.getPokemons(caughtPokemonUrl);
-      setLoading(false);
+      
       let obj = {
         name: response.name,
         weight: response.weight,
@@ -52,6 +52,7 @@ const DetailsPokemonPage = () => {
       setInfo(obj);
     };
     getPokemons();
+    setLoading(false);
   }, []);
 
   return (
