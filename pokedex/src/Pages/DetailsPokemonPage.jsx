@@ -1,13 +1,23 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import PokeDetails from '../components/PokeDetails';
 import { useParams } from 'react-router-dom';
 import { PokemonContext } from '../App';
-import { POKE_DETAILS_STATUS_TRUE } from '../constants';
-import { POKE_DETAILS_STATUS_FALSE } from './../constants';
+import { POKE_DETAILS_STATUS_TRUE, POKE_DETAILS_STATUS_FALSE } from '../constants';
 import { Api } from './../pokemonApi';
 
 const DetailsPokemonPage = () => {
+  const [loading, setLoading] = useState(false);
+  if (loading) {
+    return (
+      <div>
+        <Spinner animation="border" role="status" size="lg">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
+  }
+
   let { id } = useParams();
   const [info, setInfo] = useState({});
   const { caughtPokemonsArray } = useContext(PokemonContext);
@@ -22,8 +32,10 @@ const DetailsPokemonPage = () => {
     let dateOfCatch = caughtPokemon?.dateOfCatch;
 
     const getPokemons = async () => {
+      setLoading(true);
       const caughtPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}`;
       const response = await Api.getPokemons(caughtPokemonUrl);
+      setLoading(false);
       let obj = {
         name: response.name,
         weight: response.weight,
@@ -40,7 +52,6 @@ const DetailsPokemonPage = () => {
       setInfo(obj);
     };
     getPokemons();
-    // });
   }, []);
 
   return (

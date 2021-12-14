@@ -31,7 +31,6 @@ function App() {
     let fullPokemonsArray = [...pokemonsArray];
     fullPokemonsArray.push(...pokemons);
     setPokemonsArray(fullPokemonsArray);
-    // });
   };
 
   useEffect(() => {

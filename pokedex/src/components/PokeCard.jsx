@@ -1,12 +1,26 @@
-import React, { useContext } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import React, { useContext, } from 'react';
+import { Card, Button,  } from 'react-bootstrap';
 import { PokemonContext } from './../App';
 import { Link } from 'react-router-dom';
-import { POKE_CARD_NAME, POKE_CARD_ID, POKE_CARD_BUTTON_TEXT } from './../constants';
+import {
+  POKE_CARD_NAME,
+  POKE_CARD_ID,
+  POKE_CARD_BUTTON_TEXT,
+} from './../constants';
 
 const PokeCard = (props) => {
   const { pokemonsArray, setPokemonsArray, setCaughtPokemonsArray } =
     useContext(PokemonContext);
+  // const [loading, setLoading] = useState(false);
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <Spinner animation="border" role="status" size="lg">
+  //         <span className="visually-hidden">Loading...</span>
+  //       </Spinner>
+  //     </div>
+  //   );
+  // }
 
   const changePokeStatus = (pokemonItem) => {
     //в массиве pokemonsArray - поменять флаг isCaught на true
