@@ -11,17 +11,7 @@ import {
 const PokeCard = (props) => {
   const { pokemonsArray, setPokemonsArray, setCaughtPokemonsArray } =
     useContext(PokemonContext);
-  // const [loading, setLoading] = useState(false);
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <Spinner animation="border" role="status" size="lg">
-  //         <span className="visually-hidden">Loading...</span>
-  //       </Spinner>
-  //     </div>
-  //   );
-  // }
-
+    
   const changePokeStatus = (pokemonItem) => {
     //в массиве pokemonsArray - поменять флаг isCaught на true
     pokemonItem.isCaught = true;

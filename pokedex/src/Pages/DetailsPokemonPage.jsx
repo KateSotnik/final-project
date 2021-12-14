@@ -48,10 +48,15 @@ const DetailsPokemonPage = () => {
     getPokemons();
   }, []);
 
+  function checkPokemonInfo() {
+    if (info.id) {
+      return <PokeDetails info={info} loading={loading} />;
+    }
+  }
+  
   return (
     <Container fluid>
-      <Row> </Row>
-      <PokeDetails info={info} loading={loading} />
+      <Row>{checkPokemonInfo()} </Row>
     </Container>
   );
 };
